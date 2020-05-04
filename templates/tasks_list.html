@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Tasks List{% endblock title %}
+
+{% block content %}
+    {% for task in object_list %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h3 class="card-title">{{ task.title }}</h5>
+                <p class="text-muted mb-4">{{ task.date }}</p>
+                {% if task.description %}
+                    <p class="card-text">{{ task.description }}</p>
+                {% endif %}
+                <div>
+                    <a href="{% url 'task_update' task.pk %}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger ml-2">Complete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

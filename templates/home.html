@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}ToDo List{% endblock title %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">ToDoList site</h1>
+    <p class="lead">This site was been written with Django</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'tasks_list' %}" role="button">Go to my tasks</a>
+</div>
+{% endblock content %}
